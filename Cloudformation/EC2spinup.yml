@@ -27,16 +27,3 @@ Resources:
         -
           Key: Name
           Value: jenkins-server
-
-  TomcatInstance1:
-    Type: AWS::EC2::Instance
-    Properties:
-      InstanceType: t2.micro
-      ImageId: ami-43a15f3e
-      KeyName: youwow
-      SecurityGroupIds:
-        - sg-4e4f9106
-      Tags:
-        -
-          Key: Name
-          Value: Tomcat1
