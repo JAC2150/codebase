@@ -1,0 +1,40 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Resources:
+  JenkinsInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.micro
+      ImageId: ami-43a15f3e
+      KeyName: youwow
+      SecurityGroupIds:
+        - sg-4e4f9106
+      UserData:
+        Fn::Base64:
+          !Sub |
+            #!/bin/bash -xe
+            ## Update and install git,ansible
+            apt-get update -y
+            apt-get install python -y
+            apt-add-repository ppa:ansible/ansible
+            apt-get updat -y
+            apt-get install ansible -y
+            apt-get install git -y
+
+            ## Install Jenkins 
+      Tags:
+        -
+          Key: Name
+          Value: jenkins-server
+
+  TomcatInstance1:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.micro
+      ImageId: ami-43a15f3e
+      KeyName: youwow
+      SecurityGroupIds:
+        - sg-4e4f9106
+      Tags:
+        -
+          Key: Name
+          Value: Tomcat1
