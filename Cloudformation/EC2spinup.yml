@@ -16,11 +16,13 @@ Resources:
             apt-get update -y
             apt-get install python -y
             apt-add-repository ppa:ansible/ansible
-            apt-get updat -y
+            apt-get update -y
             apt-get install ansible -y
             apt-get install git -y
-
-            ## Install Jenkins 
+            ## Install Jenkins \
+            git clone https://github.com/JAC2150/codebase.git
+            mv codebase /
+            ansible-playbook /codebase/Ansible/JenkinsInstall.yml
       Tags:
         -
           Key: Name
