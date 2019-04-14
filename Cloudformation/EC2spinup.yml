@@ -21,7 +21,6 @@ Resources:
             apt-get install git -y
             ## Install Jenkins \
             git clone https://github.com/JAC2150/codebase.git
-            mv codebase /
             ansible-playbook /codebase/Ansible/JenkinsInstall.yml
       Tags:
         -
